@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: video-processor
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: video-storage
+      mountPath: /opt/render/project/storage
+      sizeGB: 5
